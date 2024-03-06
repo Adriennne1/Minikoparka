@@ -1,0 +1,253 @@
+@use './colors' as *;
+
+header.hero-img {
+	height: 20em;
+
+	h1 {
+		font-family: "Righteous", sans-serif;
+		font-size: 2rem;
+	
+	}
+}
+
+.equipment {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.aboutus__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 60em;
+		height: 30em;
+		margin-left: -3em;
+		transform: skewX(-10deg);
+
+		.eqip-img {
+			position: relative;
+			height: 30em;
+			width: 50%;
+			background-size: cover;
+			background-position: center;
+			background-image: url('../img/kopanie1.jpg');
+		}
+
+		.eqip-text {
+			color: $dark-color;
+			width: 50%;
+
+			p {
+				padding: 2em 2em;
+				text-align: justify;
+			}
+		}
+	}
+}
+
+.table {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	th,
+	td {
+		border-bottom: 1px solid $light-font;
+		padding: 1em 1em;
+	}
+
+	th {
+		border-right: 1px solid $light-font;
+	}
+}
+
+//zastosowanie minikoparki
+.box-use {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+transform: skewX(-10deg);
+	.use-mini-img {
+		position: relative;
+		background-image: url('../img/use-mini.jpg');
+		height: 30em;
+		width: 25em;
+		background-position: center;
+		background-size: cover;
+		margin-left: 3em;
+	
+	}
+
+	li {
+		list-style: none;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0.3em 1em;
+		
+	}
+	.check {
+		background-color: $yellow;
+		margin-right: 1em;
+		margin-left: 3em;
+		list-style: none;
+	}
+}
+
+.advantage-mini {
+	.box-advantage {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.advantage-text {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-gap: 1em;
+		transform: skewX(-10deg);
+		font-size: 0.9rem;
+		text-align: center;
+		color: $dark-color;
+
+		.square-title {
+			text-transform: uppercase;
+			margin-bottom: 1em;
+			font-weight: bold;
+			font-size: 1rem;
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
+		}
+
+		@mixin square {
+			padding: 1em 2em;
+			margin: 1em 0.5em;
+			width: 25vw;
+			height: 100%;
+			background-color: $yellow;
+		}
+
+		.square1 {
+			@include square;
+		}
+		.square2 {
+			@include square;
+		}
+		.square3 {
+			@include square;
+		}
+		.square4 {
+			@include square;
+		}
+		.square5 {
+			@include square;
+		}
+		.square6 {
+			@include square;
+		}
+	}
+}
+
+.prices-text {
+	text-align: center;
+	margin: 2em 3em;
+}
+
+//================================================================
+//media
+
+@media (max-width: 800px) {
+	.equipment {
+		.aboutus__wrapper {
+			display: flex;
+			flex-direction: column;
+			width: 80vw;
+			height: 100%;
+			margin-left: 0;
+			transform: skewX(0);
+
+			.eqip-img {
+				width: 100%;
+			}
+
+			.eqip-text {
+				width: 100%;
+			}
+		}
+	}
+
+	.advantage-mini {
+		.advantage-text {
+			.square1,
+			.square2,
+			.square3,
+			.square4,
+			.square5,
+			.square6 {
+				width: 40vw;
+				padding: 0.3em 0.3em;
+				margin: 0.3em 0.3em;
+			}
+		}
+	}
+	.advantage-mini {
+		.advantage-text {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			transform: skewX(0);
+			gap: 0.2em;
+		}
+	}
+	.box-use {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.use-mini-img {
+			height: 20vh;
+			width: 60vw;
+			margin-left: 0;
+			transform: skewX(0);
+		}
+
+		.use-list {
+			padding: 0;
+			margin: 0.7em;
+		}
+	}
+
+	.btn {
+		justify-content: center;
+		margin-left: 4em;
+		margin-bottom: 4em;
+		margin-top: 3em;
+	}
+}
+
+@media (max-width: 992px) {
+	.eqip-text,
+	.table,
+	li,
+	.prices-p,
+	.prices-text {
+		font-size: 1rem;
+	}
+
+	.box-use {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.use-mini-img {
+			margin-left: 0;
+			transform: skewX(0);
+		}
+
+		.use-list {
+			padding: 0;
+			margin: 0.7em;
+		}
+	}
+}

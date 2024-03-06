@@ -1,0 +1,38 @@
+@use './colors' as *;
+
+header.hero-img {
+	h1 {
+		font-family: "Righteous", sans-serif;
+		font-size: 2rem;
+	}
+}
+
+.equipment {
+	.aboutus__wrapper {
+		width: 50em;
+		height: 100%;
+
+		.eqip-img {
+			height: 35em;
+			background-image: url('../img/wywrotka1.jpg');
+		}
+	}
+}
+
+.box-use {
+	.use-mini-img {
+		background-image: url('../img/wywrotka2.jpg');
+	}
+}
+
+//===================================================
+//media
+
+@media (max-width: 800px) {
+	.equipment {
+		.aboutus__wrapper {
+			width: 80vw;
+			height: 100%;
+		}
+	}
+}
